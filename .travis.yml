@@ -1,0 +1,58 @@
+osx_image: xcode7.3
+
+git:
+  depth: 5
+
+branches:
+  only:
+    - deploy
+
+os:
+  - osx
+
+language: c
+
+cache:
+  directories:
+    - cache
+    - build/cache
+    - node_modules
+    - $HOME/Library/Caches/Homebrew
+    - /usr/local/Cellar 
+
+before_install:
+  # homebrew
+  - brew update
+  
+install:
+  # ecd:bootstrap
+  - source ./scripts/ecd.sh
+  # ecd:fetch
+  - ecd_cache_fetch
+  - ecd_cache_install
+  # ecd:put
+  #- ecd_cache_pack
+  #- ecd_cache_put
+
+before_script:
+  # rvm
+  - rvm get stable --auto-dotfiles
+  # nvm
+  - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | NVM_DIR=$HOME/.nvm sh
+  - source $HOME/.nvm/nvm.sh
+  - command -v nvm
+  - nvm install 6.3.1
+  - nvm use 6.3.1
+
+script:
+  - npm prune
+  - npm install
+  - npm run-script build
+  # ecd:deploy
+  - ecd_build_deploy ./build/release/*.zip
+
+notifications:
+  webhooks:
+    on_success: always
+    on_failure: always
+    on_start: always
