@@ -1,20 +1,28 @@
-# JetBrains Rider
-.idea/
-*.sln.iml
-
-# Default
-logs
-tmp
+# BASELINE
+# macOS
 .DS_Store
+
+# Logs
+logs
+*.log
+
+# Temporary
+temp
+tmp
 
 # Cache
 .cache
 cache
+.sass-cache/
 
-# Build
+# JetBrains
+.idea/
+*.sln.iml
+
+# Compiled
 build
-
 
 # Node
 node_modules
 jspm_packages
+cache-ecb
