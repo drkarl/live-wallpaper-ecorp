@@ -5,7 +5,7 @@ git:
 
 branches:
   only:
-    - deploy
+    - /^deploy.*$/
 
 os:
   - osx
