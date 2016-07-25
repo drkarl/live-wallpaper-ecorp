@@ -1,7 +1,13 @@
 #!/usr/bin/env node
 
+
+// Modules (Node)
+var path = require('path'),
+    childProcess = require('child_process');
+
+// Modules (External)
 var electronPath = require('electron-prebuilt');
-var childProcess = require('child_process');
+
 
 var args = process.argv.slice(2);  
 args.unshift( __dirname + '/../' );
