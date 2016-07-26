@@ -1,6 +1,6 @@
 {
   "name": "live-wallpaper-ecorp",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Electron-based live wallpaper showing a glitched E Corp / Evil Corp logo.",
   "license": "MIT",
   "author": {
