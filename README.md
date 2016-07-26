@@ -7,7 +7,7 @@
 
 ## Demo
 
-![macOS Screencast](https://raw.githubusercontent.com/sidneys/live-wallpaper-ecorp/screenshots/screen-darwin-2.gif)   
+![macOS Screencast](https://github.com/sidneys/live-wallpaper-ecorp/raw/master/screenshots/screen-darwin-2.gif)   
 
 ## <a name="platforms"></a>Platforms
 
@@ -33,10 +33,13 @@ sudo apt-get install libappindicator1
 
 To enable, simply launch the app.
 
-To disable it, use the system icon:
+To disable it, use the menu bar / system tray icons:
 
-![macOS Tray](https://raw.githubusercontent.com/sidneys/live-wallpaper-ecorp/screenshots/tray-darwin-1.gif)   
-![Linux Tray](https://raw.githubusercontent.com/sidneys/live-wallpaper-ecorp/screenshots/tray-linux-1.gif)
+### macOS 
+![macOS Tray](https://github.com/sidneys/live-wallpaper-ecorp/raw/master/screenshots/tray-darwin-1.gif)
+
+### Linux
+![Linux* Tray](https://github.com/sidneys/live-wallpaper-ecorp/raw/master/screenshots/tray-linux-1.gif)
 
 
 
