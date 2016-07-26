@@ -12,14 +12,14 @@ var path = require('path'),
  * Modules: External
  * @global
  */
-var appRoot = require('app-root-path').path,
-    electronPath = require('electron-prebuilt');
+var electronPath = require('electron-prebuilt');
 
 /**
  * Modules: Internal
  * @global
  */
-var packageJson = require('../package.json');
+var appRoot = path.resolve('.'),
+    packageJson = require(path.join(appRoot, 'package.json'));
 
 /**
  * Path to Electron application

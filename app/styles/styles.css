@@ -21,6 +21,7 @@ body {
 #letter, #text {
     text-align: center;
     font-family: "Arial Black", sans-serif;
+    font-weight: bold;
     text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
     color: rgba(255,255,255,1);

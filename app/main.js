@@ -25,17 +25,12 @@ var electron = require('electron'),
 var path = require('path');
 
 /**
- * Modules: External
- * @global
- */
-var appRoot = require('app-root-path').path;
-
-/**
  * Modules: Internal
  * @global
  */
-var packageJson = require('../package.json'),
-    platform = require('../lib/platform');
+var appRoot = path.resolve('.'),
+    packageJson = require(appRoot + '/package.json'),
+    platform = require(appRoot + '/lib/platform');
 
 /**
  * @global
@@ -71,8 +66,8 @@ app.on('ready', function() {
         resizable: false,
         frame: false,
         type: 'desktop',
-        x: targetDisplay.bounds.x,
-        y: targetDisplay.bounds.y,
+        x: targetDisplay.workArea.x,
+        y: targetDisplay.workArea.y,
         width: targetDisplay.bounds.width,
         height: targetDisplay.bounds.height
     });
