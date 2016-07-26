@@ -14,7 +14,7 @@ language: c
 
 cache:
   directories:
-    - cache
+    - electron-cloud-deploy-cache
     - build/cache
     - node_modules
     - $HOME/Library/Caches/Homebrew
@@ -25,20 +25,12 @@ before_install:
   - brew update
   
 install:
-  # ecd:bootstrap
-  - source ./scripts/ecd.sh
-  # ecd:fetch
-  - ecd_cache_fetch
-  - ecd_cache_install
-  # ecd:put
-  #- ecd_cache_pack
-  #- ecd_cache_put
+  # ecd:cache:get
+  - npm run-script cache-get
 
 before_script:
-  # rvm
-  - rvm get stable --auto-dotfiles
   # nvm
-  - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | NVM_DIR=$HOME/.nvm sh
+  - curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | NVM_DIR=$HOME/.nvm sh
   - source $HOME/.nvm/nvm.sh
   - command -v nvm
   - nvm install 6.3.1
@@ -48,8 +40,10 @@ script:
   - npm prune
   - npm install
   - npm run-script build
-  # ecd:deploy
-  - ecd_build_deploy ./build/release/*.zip
+  # ecd:deploy:bintray
+  - npm run-script deploy-bintray
+  # ecd:deploy:github
+  - npm run-script deploy-github
 
 notifications:
   webhooks:
