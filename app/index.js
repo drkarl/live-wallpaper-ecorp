@@ -16,7 +16,6 @@ const appRoot = require('app-root-path').path;
 
 // Modules (Internal)
 const packageJson = require('../package.json'),
-    logger = require('../lib/logger'),
     platform = require('../lib/platform');
 
 // Keep a global reference of the window object, if you don't, the window will
