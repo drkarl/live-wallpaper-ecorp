@@ -32,7 +32,7 @@
     "build": "node ./lib/build.js -- ",
     "cache-get": "source ./scripts/deploy-bintray.sh && ecd_cache_get && ecd_cache_install",
     "cache-put": "source ./scripts/deploy-bintray.sh && ecd_cache_pack && ecd_cache_put",
-    "deploy-bintray": "source ./scripts/deploy-bintray.sh && ecd_deploy ./build/release/*.zip",
+    "deploy-bintray": "source ./scripts/deploy-bintray.sh && ecd_app_deploy ./build/release/*.zip",
     "deploy-github": "node ./lib/deploy-github.js -- "
   },
   "main": "./app/main.js",
