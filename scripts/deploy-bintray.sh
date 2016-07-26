@@ -28,7 +28,7 @@
 # Bootstrap the script:
 #  source ./scripts/ecd.sh
 # Run it one of the following commands:
-#  ecd_cache_pack, ecd_cache_put, ecd_cache_fetch, ecd_cache_install
+#  ecd_cache_pack, ecd_cache_put, ecd_cache_get, ecd_cache_install
 
 
 # ENV
@@ -413,8 +413,8 @@ function ecd_cache_put {
     return 0
 }
 
-# Fetch Cached Modules
-function ecd_cache_fetch {
+# Get Cached Modules
+function ecd_cache_get {
     _cache_folder_init
     _bintray_artifact_download "${CACHE_FILE_NAME}" "${CACHE_FILE_NAME}.${CACHE_FILE_EXTENSION}" "${CACHE_PATH_ABSOLUTE}"
     return 0
@@ -461,5 +461,5 @@ _install_tools
 _check_variables
 #ecd_cache_pack
 #ecd_cache_put
-#ecd_cache_fetch
+#ecd_cache_get
 #ecd_cache_install
