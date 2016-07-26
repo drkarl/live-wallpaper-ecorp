@@ -28,7 +28,7 @@
   "engines": {
     "node": ">=6.0.0"
   },
-  "main": "./app/index.js",
+  "main": "./app/main.js",
   "bin": {
     "live-wallpaper-ecorp": "./bin/cli.js"
   },

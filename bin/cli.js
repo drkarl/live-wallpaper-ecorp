@@ -1,18 +1,34 @@
 #!/usr/bin/env node
 
 
-// Modules (Node)
+/**
+ * Modules: Node
+ * @global
+ */
 var path = require('path'),
     childProcess = require('child_process');
 
-// Modules (External)
-var electronPath = require('electron-prebuilt');
+/**
+ * Modules: External
+ * @global
+ */
+var appRoot = require('app-root-path').path,
+    electronPath = require('electron-prebuilt');
 
+/**
+ * Modules: Internal
+ * @global
+ */
+var packageJson = require('../package.json');
 
-var args = process.argv.slice(2);  
-args.unshift( __dirname + '/../' );
+/**
+ * Path to Electron application
+ * @global
+ */
+var appMain = path.join(appRoot, packageJson.main);
+
 
 // Run
-childProcess.spawn(electronPath, args , {
+childProcess.spawn(electronPath, [ appMain ], {
     stdio: 'inherit'
 });
