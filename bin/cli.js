@@ -18,7 +18,7 @@ var electronPath = require('electron-prebuilt');
  * Modules: Internal
  * @global
  */
-var appRoot = path.resolve('.'),
+var appRoot = appRoot = path.join(__dirname, '..'),
     packageJson = require(path.join(appRoot, 'package.json'));
 
 /**

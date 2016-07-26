@@ -28,7 +28,7 @@ var path = require('path');
  * Modules: Internal
  * @global
  */
-var appRoot = path.resolve('.'),
+var appRoot = path.join(__dirname, '..'),
     packageJson = require(appRoot + '/package.json'),
     platform = require(appRoot + '/lib/platform');
 
